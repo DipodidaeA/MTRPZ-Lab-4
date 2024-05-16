@@ -120,6 +120,14 @@ func (pw *Visualizer) handleEvent(e any, t screen.Texture) {
 
 	case mouse.Event:
 		if t == nil {
+			if e.Direction == mouse.DirPress {
+				if e.Button == mouse.ButtonLeft {
+					pw.w.Fill(pw.sz.Bounds(), color.RGBA{R: 0, G: 200, B: 0, A: 200}, screen.Src)
+				}
+				if e.Button == mouse.ButtonRight {
+					pw.w.Fill(pw.sz.Bounds(), color.RGBA{R: 200, G: 0, B: 0, A: 200}, screen.Src)
+				}
+			}
 		}
 
 	case paint.Event:
