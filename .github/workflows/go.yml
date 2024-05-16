@@ -1,4 +1,4 @@
-# This workflow will build a golang project
+# This workflows will build a golang project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
 
 name: Build
@@ -22,8 +22,8 @@ jobs:
           go-version: '1.22'
 
       - name: Build
-        run: |
+        run:
           go build -v ./...
       - name: Test
-        run: |
+        run:
           make test
